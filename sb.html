@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://bigjackson.top/img/favicon.ico" type="image/x-icon">
+    <title>仇人故事</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #E0E5EC;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1em;
+            color: #333;
+            text-align: center;
+        }
+        .story-form {
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .story-list {
+            margin-top: 30px;
+        }
+        .story-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #FF6F61;
+        }
+        .story-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .story-content {
+            color: #666;
+            white-space: pre-wrap;
+        }
+        .story-image {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .story-date {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #E53A40;
+        }
+        footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>仇人故事</h1>
+        
+        <div class="story-list">
+            <div class="story-item">
+                <div class="story-title">关于于瀚森的故事</div>
+                <div class="story-content">
+                    那是一个阳光明媚的下午，我在补课班上着英语课，突然收到了一个陌生人加我微信，他说他是王隽名，问我是不是把他身份证发朋友圈里了，然后就让我删点，说我要是不删除他就报警，我想着多一事不如少一事，就删了（本地删除，云端还有）我很气愤的找到于瀚森，问他为什么告诉王隽名，结果于瀚森给我发一大堆辱骂词汇
+                    <img src="https://bigjackson.top/sb/sb.jpg" alt="故事相关图片" class="story-image">
+                </div>
+                <div class="story-date">2023年的事</div>
+            </div>
+
+            <div class="story-item">
+                <div class="story-title">张瀚文的所作所为</div>
+                <div class="story-content">张瀚文总是喜欢在背后说别人的坏话。有一次，我无意中听到他在和其他同学说我是一个自私的人，还说我在班级活动中从来不出力。这完全不是事实，我经常参加班级活动，而且总是尽力帮助同学。他的这种行为让我感到非常失望和愤怒。</div>
+                <div class="story-date">2024-03-19</div>
+            </div>
+
+            <div class="story-item">
+                <div class="story-title">郭宏睿的恶劣行为</div>
+                <div class="story-content">郭宏睿在体育课上故意把我推倒，导致我的膝盖受伤。当我问他为什么要这样做时，他竟然笑着说"只是开个玩笑"。这种不尊重他人的行为让我非常生气，而且他事后也没有道歉，反而觉得我小题大做。</div>
+                <div class="story-date">2024-03-18</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>COPYRIGHT © 2020 - 2025 BIGJACKSON.ALL RIGHTS RESERVED.<br>BigJackson 版权所有</p>
+</footer>
+
+<script>
+    // 从localStorage加载故事
+    function loadStories() {
+        const stories = JSON.parse(localStorage.getItem('stories') || '[]');
+        const storyList = document.getElementById('storyList');
+        storyList.innerHTML = '';
+        
+        stories.forEach(story => {
+            const storyElement = document.createElement('div');
+            storyElement.className = 'story-item';
+            storyElement.innerHTML = `
+                <div class="story-title">${story.title}</div>
+                <div class="story-content">${story.content}</div>
+                <div class="story-date">${story.date}</div>
+            `;
+            storyList.appendChild(storyElement);
+        });
+    }
+
+    // 保存故事到localStorage
+    function saveStory(title, content) {
+        const stories = JSON.parse(localStorage.getItem('stories') || '[]');
+        stories.unshift({
+            title,
+            content,
+            date: new Date().toLocaleString('zh-CN')
+        });
+        localStorage.setItem('stories', JSON.stringify(stories));
+        loadStories();
+    }
+
+    // 处理表单提交
+    document.getElementById('storyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+        
+        saveStory(title, content);
+        
+        // 清空表单
+        this.reset();
+    });
+
+    // 页面加载时显示已有故事
+    loadStories();
+</script>
+
+</body>
+</html>

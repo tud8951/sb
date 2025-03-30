@@ -12,10 +12,15 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             line-height: 1.6;
+        }
+        .container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .card {
             background: white;
@@ -31,9 +36,29 @@
             margin-bottom: 1em;
             color: #333;
         }
-        p {
-            font-size: 1rem;
-            color: #777;
+        .school-section {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+        .school-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .person-list {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+        .person-item {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .person-item:last-child {
+            border-bottom: none;
         }
         a.button {
             display: inline-block;
@@ -48,57 +73,80 @@
         a.button:hover {
             background-color: #E53A40;
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .card {
-                padding: 30px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            p, a.button {
-                font-size: 0.9rem;
-            }
-        }
-
         footer {
             background-color: #333;
             color: #ffffff;
             text-align: center;
             padding: 1rem;
-            margin-top: auto; /* Push footer to the bottom */
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .school-section {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
+<div class="container">
+    <div class="card">
+        <div style="font-family:Simsun">
+            <h1>仇人榜</h1>
+            
+            <div class="school-section">
+                <div class="school-title">市一中</div>
+                <div class="person-list">
+                    <div class="person-item">于瀚森 230303201005104036</div>
+                    <div class="person-item">刘利锦 230302200912254010</div>
+                    <div class="person-item">张瀚文 230302200905284094</div>
+                    <div class="person-item">刘家蔚 230306200905274019</div>
+                    <div class="person-item">郭宏睿 230306200903134012</div>
+                    <div class="person-item">于歆茁 230302200909274045</div>
+                    <div class="person-item">王隽名 230321200912040038</div>
+                    <div class="person-item">杜启超 231224200909100073</div>
+                    <div class="person-item">朴欣怡 231004201006180920</div>
+                    <div class="person-item">王一涵 23030220091022407X</div>
+                    <div class="person-item">孙晓耕 230302200904104012</div>
+                    <div class="person-item">袁子涵 460108200911151722</div>
+                    <div class="person-item">李欣澜 231026199911150324</div>
+                    <div class="person-item">潘玲玲 230828199111303244</div>
+                    <div class="person-item">付国强 230302198111254053</div>
+                    <div class="person-item">黄春梅 230304196903264042</div>
+                </div>
+            </div>
 
-<div class="card">
-    <div style="font-family:Simsun">
-    <h1>仇人榜</h1>
-    于瀚森 230303201005104036
-        <br />刘利锦 230302200912254010
-        <br />张瀚文 230302200905284094
-        <br />刘家蔚 230306200905274019
-        <br />郭宏睿 230306200903134012
-        <br />于歆茁 230302200909274045
-        <br />王隽名 230321200912040038
-        <br />杜启超 231224200909100073
-        <br />朴欣怡 231004201006180920
-        <br />王一涵 23030220091022407X
-        <br />孙晓耕 230302200904104012
-        <br />袁子涵 460108200911151722
-        <br />李欣澜 231026199911150324
-        <br />潘玲玲 230828199111303244
-        <br />付国强 230302198111254053
-        <br />黄春梅 230304196903264042
-        <br />
+            <div class="school-section">
+                <div class="school-title">和平小学</div>
+                <div class="person-list">
+                    <div class="person-item">曹钧搏 230302201003234113</div>
+                    <div class="person-item">隽兆槊 230302201005254150</div>
+                    <div class="person-item">蔺煜瀚 230302201002134014</div>
+                    <div class="person-item">孙嘉淇 230302201006124024</div>
+                    <div class="person-item">王隽名 230321200912040038</div>
+                    <div class="person-item">肖学成 230307200912054010</div>
+                    <div class="person-item">于翔宇 230302201003204037</div>
+                    <div class="person-item">于小森 230382201001010070</div>
+                    <div class="person-item">张珈睿 230302200912144129</div>
+                    <div class="person-item">张芷郡 230306200908184051</div>
+                    <div class="person-item">周轩硕 230321201008050136</div>
+                    <div class="person-item">于瀚森 230303201005104036</div>
+                    <div class="person-item">张炳轩 230302201001154013</div>
+                </div>
+            </div>
 
-    <a href="sb.html" class="button">了解更多</a></div>
+            <a href="sb.html" class="button">了解更多</a>
+        </div>
+    </div>
 </div>
 
-<footer id="v18">
-    <p id="v19">COPYRIGHT © 2020 - 2025 BIGJACKSON.ALL RIGHTS RESERVED.<br>BigJackson 版权所有</p>
+<footer>
+    <p>COPYRIGHT © 2020 - 2025 BIGJACKSON.ALL RIGHTS RESERVED.<br>BigJackson 版权所有</p>
 </footer>
 
 </body>
